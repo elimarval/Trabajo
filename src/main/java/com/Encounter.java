@@ -6,12 +6,58 @@ package com;
 
 public class Encounter implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Encounter() {
-    }
+	@org.kie.api.definition.type.Label(value = "código de estado")
+	private java.lang.String status;
+	@org.kie.api.definition.type.Label(value = "clasificación del tipo de encuentro")
+	private com.Coding encounter_class;
+	@org.kie.api.definition.type.Label(value = "A quién se atendió en el encuentro")
+	private com.Participant paciente;
+	@org.kie.api.definition.type.Label(value = "medico que atendió al paciente en el encuentro")
+	private com.Participant medico;
 
+	public Encounter() {
+	}
 
+	public java.lang.String getStatus() {
+		return this.status;
+	}
 
+	public void setStatus(java.lang.String status) {
+		this.status = status;
+	}
+
+	public com.Coding getEncounter_class() {
+		return this.encounter_class;
+	}
+
+	public void setEncounter_class(com.Coding encounter_class) {
+		this.encounter_class = encounter_class;
+	}
+
+	public com.Participant getPaciente() {
+		return this.paciente;
+	}
+
+	public void setPaciente(com.Participant paciente) {
+		this.paciente = paciente;
+	}
+
+	public com.Participant getMedico() {
+		return this.medico;
+	}
+
+	public void setMedico(com.Participant medico) {
+		this.medico = medico;
+	}
+
+	public Encounter(java.lang.String status, com.Coding encounter_class,
+			com.Participant paciente, com.Participant medico) {
+		this.status = status;
+		this.encounter_class = encounter_class;
+		this.paciente = paciente;
+		this.medico = medico;
+	}
 
 }
