@@ -8,9 +8,12 @@ public class Reference implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Description(value = "Se supone que se le pueden definir tipo a partir de una referencia que lo defina. Los ejemplos de HapiFHIR usan solo display generalmente, así que nos conformamos con display.")
-	@org.kie.api.definition.type.Label(value = "Texto alternativo del recurso")
+	@org.kie.api.definition.type.Label("Texto alternativo del recurso")
+	@org.kie.api.definition.type.Description("Se supone que se le pueden definir tipo a partir de una referencia que lo defina. Los ejemplos de HapiFHIR usan solo display generalmente, así que nos conformamos con display.")
 	private java.lang.String display;
+
+	@org.kie.api.definition.type.Label(value = "url donde se encuentra el recurso referenciado")
+	private java.lang.String reference;
 
 	public Reference() {
 	}
@@ -23,8 +26,17 @@ public class Reference implements java.io.Serializable {
 		this.display = display;
 	}
 
-	public Reference(java.lang.String display) {
+	public java.lang.String getReference() {
+		return this.reference;
+	}
+
+	public void setReference(java.lang.String reference) {
+		this.reference = reference;
+	}
+
+	public Reference(java.lang.String display, java.lang.String reference) {
 		this.display = display;
+		this.reference = reference;
 	}
 
 }
