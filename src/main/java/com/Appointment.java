@@ -6,12 +6,80 @@ package com;
 
 public class Appointment implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Appointment() {
-    }
+	@org.kie.api.definition.type.Label(value = "status")
+	private java.lang.String status;
+	@org.kie.api.definition.type.Label(value = "Momento de la cita")
+	private com.instant start;
+	@org.kie.api.definition.type.Label(value = "Especialidad para la que se pide la cita")
+	private com.CodeableConcept speciality;
+	private java.lang.String description;
+	@org.kie.api.definition.type.Label(value = "paciente para el que se solicita")
+	private com.Participant paciente;
+	@org.kie.api.definition.type.Label(value = "medico para el que se solicita")
+	private com.Participant medico;
 
+	public Appointment() {
+	}
 
+	public java.lang.String getStatus() {
+		return this.status;
+	}
 
+	public void setStatus(java.lang.String status) {
+		this.status = status;
+	}
+
+	public com.instant getStart() {
+		return this.start;
+	}
+
+	public void setStart(com.instant start) {
+		this.start = start;
+	}
+
+	public com.CodeableConcept getSpeciality() {
+		return this.speciality;
+	}
+
+	public void setSpeciality(com.CodeableConcept speciality) {
+		this.speciality = speciality;
+	}
+
+	public java.lang.String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(java.lang.String description) {
+		this.description = description;
+	}
+
+	public com.Participant getPaciente() {
+		return this.paciente;
+	}
+
+	public void setPaciente(com.Participant paciente) {
+		this.paciente = paciente;
+	}
+
+	public com.Participant getMedico() {
+		return this.medico;
+	}
+
+	public void setMedico(com.Participant medico) {
+		this.medico = medico;
+	}
+
+	public Appointment(java.lang.String status, com.instant start,
+			com.CodeableConcept speciality, java.lang.String description,
+			com.Participant paciente, com.Participant medico) {
+		this.status = status;
+		this.start = start;
+		this.speciality = speciality;
+		this.description = description;
+		this.paciente = paciente;
+		this.medico = medico;
+	}
 
 }
