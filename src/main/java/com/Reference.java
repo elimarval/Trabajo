@@ -6,12 +6,25 @@ package com;
 
 public class Reference implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Reference() {
-    }
+	@org.kie.api.definition.type.Description(value = "Se supone que se le pueden definir tipo a partir de una referencia que lo defina. Los ejemplos de HapiFHIR usan solo display generalmente, así que nos conformamos con display.")
+	@org.kie.api.definition.type.Label(value = "Texto alternativo del recurso")
+	private java.lang.String display;
 
+	public Reference() {
+	}
 
+	public java.lang.String getDisplay() {
+		return this.display;
+	}
 
+	public void setDisplay(java.lang.String display) {
+		this.display = display;
+	}
+
+	public Reference(java.lang.String display) {
+		this.display = display;
+	}
 
 }
