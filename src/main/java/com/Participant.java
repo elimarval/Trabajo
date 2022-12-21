@@ -9,10 +9,13 @@ public class Participant implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Rol del participante")
+	@org.kie.api.definition.type.Label("Rol del participante")
 	private com.CodeableConcept type;
-	@org.kie.api.definition.type.Label(value = "Referencia a: Person, Location/HealthcareService or Device")
+	@org.kie.api.definition.type.Label("Referencia a: Person, Location/HealthcareService or Device")
 	private com.Reference actor;
+
+	@org.kie.api.definition.type.Label(value = "código")
+	private java.lang.String status;
 
 	public Participant() {
 	}
@@ -33,9 +36,19 @@ public class Participant implements java.io.Serializable {
 		this.actor = actor;
 	}
 
-	public Participant(com.CodeableConcept type, com.Reference actor) {
+	public java.lang.String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(java.lang.String status) {
+		this.status = status;
+	}
+
+	public Participant(com.CodeableConcept type, com.Reference actor,
+			java.lang.String status) {
 		this.type = type;
 		this.actor = actor;
+		this.status = status;
 	}
 
 }
